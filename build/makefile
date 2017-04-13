@@ -1,12 +1,12 @@
 CC = g++
-SRC_FILES = ../include/die.cpp
+SRC_FILES = ../bin/die.cpp
 
-all: INCLUDE = -I../include
+all: INCLUDE = -I../bin
 all: TARGET = yahtzee
 all: SRC = ../src/main.cpp
 
-tests: INCLUDE = -I../include -I../tests
-tests: TAGRET = tests
+tests: INCLUDE = -I../bin -I../tests
+tests: TARGET = tests
 tests: SRC = ../tests/tests.cpp ../tests/dieTest.cpp
 
 all:

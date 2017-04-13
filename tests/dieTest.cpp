@@ -1,7 +1,7 @@
 #include "catch.hpp"
-#include "Die.h"
+#include "die.h"
 #include <stdexcept>
 
 TEST_CASE( "Die class", "[die]" ) {
-    
+    Die d;
 }
