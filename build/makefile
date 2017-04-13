@@ -7,7 +7,7 @@ all: SRC = ../src/main.cpp
 
 tests: INCLUDE = -I../include -I../tests
 tests: TAGRET = tests
-tests: SRC = ../tests/tests.cpp
+tests: SRC = ../tests/tests.cpp ../tests/dieTest.cpp
 
 all:
 	$(CC) $(SRC) $(INCLUDE) $(SRC_FILES) -o $(TARGET)
