@@ -3,5 +3,5 @@
 #include <stdexcept>
 
 TEST_CASE( "Die class", "[die]" ) {
-    Die d;
+    die d;
 }
