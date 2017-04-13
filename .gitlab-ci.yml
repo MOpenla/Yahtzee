@@ -1,6 +1,6 @@
 image: yikaus/alpine-bash
 
-before_scrpit:
+before_script:
     - apk update && apk add make g++
     
 stages:
