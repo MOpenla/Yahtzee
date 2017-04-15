@@ -3,7 +3,7 @@
 
 class die {
 public:
-    int getValue() { return 3; }
+    int getValue() { return rand() % 6 + 1; }
 };
 
 #endif
