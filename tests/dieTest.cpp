@@ -12,4 +12,8 @@ TEST_CASE( "Die class", "[die]" ) {
     SECTION("getValue() is random") {
         REQUIRE( d.getValue() != d.getValue() );
     }
+
+    SECTION("die is 0 before rolled") {
+        REQUIRE( d.getValue() == 0 );
+    }
 }
