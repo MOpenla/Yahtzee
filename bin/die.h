@@ -2,8 +2,13 @@
 #define _DIE_H_
 
 class die {
+private:
+    int val;
 public:
-    int getValue() { return rand() % 6 + 1; }
+    die() { val = 0; }
+
+    void roll() { val = rand() % 6 + 1; }
+    int getValue() { return val; }
 };
 
 #endif
