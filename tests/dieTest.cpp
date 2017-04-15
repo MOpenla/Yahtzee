@@ -30,4 +30,10 @@ TEST_CASE( "Die class", "[die]" ) {
 
         REQUIRE( d.getValue()+d2.getValue() == d+d2);
     }
+
+    SECTION("die can be added with an int") {
+        d.roll();
+
+        REQUIRE( d.getValue+5 == d+5);
+    }
 }
