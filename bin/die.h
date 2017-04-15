@@ -10,6 +10,7 @@ public:
     void roll() { val = rand() % 6 + 1; }
     int getValue() { return val; }
     int operator+(die right) { return val + right.val; }
+    int operator+(int right) { return val + right; }
 };
 
 #endif
