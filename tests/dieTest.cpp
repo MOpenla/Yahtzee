@@ -6,6 +6,6 @@ TEST_CASE( "Die class", "[die]" ) {
     die d;
 
     SECTION("Get Value") {
-        REQUIRE( (d.getValue() > 0 && d.getValue() < 7) )
+        REQUIRE( (d.getValue() > 0 && d.getValue() < 7) );
     }
 }
