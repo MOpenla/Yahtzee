@@ -45,9 +45,9 @@ TEST_CASE( "Die class", "[die]" ) {
     }
 
     SECTION("die can be checked if it equals an int value") {
-        d.roll()
+        d.roll();
         int val = 2;
 
-        REQUIRE( (d.getValue() == 2) == (d == 2) );
+        REQUIRE( (d.getValue() == val) == (d == val) );
     }
 }
