@@ -36,4 +36,11 @@ TEST_CASE( "Die class", "[die]" ) {
 
         REQUIRE( d.getValue()+5 == d+5);
     }
+
+    SECTION("two die can be checked if they are equal") {
+        die d2;
+        d2.roll();
+
+        REQUIRE( (d.getValue() == d2.getValue()) == (d == d2) );
+    }
 }
