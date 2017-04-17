@@ -11,6 +11,7 @@ public:
     int getValue() { return val; }
     int operator+(die right) { return val + right.val; }
     int operator+(int right) { return val + right; }
+    bool operator==(die right) { return val == right.val; }
 };
 
 #endif
