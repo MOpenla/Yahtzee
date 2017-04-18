@@ -8,12 +8,12 @@
 
 using namespace std;
 
-class Game{
+class game{
     private:
         void Display(int []);
         
     public:
-        Game();
+        game();
         void Play();
         bool keepPlaying(int);
 };

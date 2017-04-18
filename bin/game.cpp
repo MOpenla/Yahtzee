@@ -1,11 +1,11 @@
-#include "Game.h"
+#include "game.h"
 #include "ScoreCard.h"
 #include <sstream>
 #include <cctype> //For isDigit()
 
 using namespace std;
 
-Game::Game(){
+game::game(){
 
 }
 
