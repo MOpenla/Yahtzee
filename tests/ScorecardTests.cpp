@@ -109,14 +109,14 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         dice.roll();
         testCat(dice, array);
         ScoreCard.setFull(dice);
-        REQUIRE(ScoreCard.getFull(dice)==24);
+        REQUIRE(ScoreCard.getFull(dice)==25);
     }
     SECTION("Scorecard returns 0 if not Full House")
     {
         int array[6] = { -1, 1, 1, 6, 4, 5};
         testCat(dice, array);
         ScoreCard.setFull(dice);
-        REQUIRE(ScoreCard.getFull(dice) == 1);
+        REQUIRE(ScoreCard.getFull(dice) == 0);
     }
 
 
