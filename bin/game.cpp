@@ -1,5 +1,5 @@
 #include "game.h"
-#include "ScoreCard.h"
+//#include "ScoreCard.h"
 #include <sstream>
 #include <cctype> //For isDigit()
 
