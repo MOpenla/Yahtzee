@@ -60,6 +60,15 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         REQUIRE( ScoreCard.getFour(dice)<=20);
         REQUIRE( ScoreCard.getFour(dice)>=0);
     }
+    SECTION("Scorecard returns valid sum for fives category" )
+    {
+        dice.roll();
+        ScoreCard.setFive(dice);
+        REQUIRE( ScoreCard.getFive(dice)%5==0);
+        REQUIRE( ScoreCard.getFive(dice)<=25);
+        REQUIRE( ScoreCard.getFive(dice)>=0);
+    }
+
 
 
 }
