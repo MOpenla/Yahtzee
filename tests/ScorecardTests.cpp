@@ -94,14 +94,14 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         dice.roll();
         testCat(dice, array);
         ScoreCard.setFOAK(dice);
-        REQUIRE(ScoreCard.getFOAK(dice)==8);
+        REQUIRE(ScoreCard.getFOAK(dice)==9);
     }
     SECTION("Scorecard returns 0 if not Four of a Kind")
     {
         int array[6] = { -1, 1, 1, 6, 4, 5};
         testCat(dice, array);
         ScoreCard.setFOAK(dice);
-        REQUIRE(ScoreCard.getFOAK(dice) == 1);
+        REQUIRE(ScoreCard.getFOAK(dice) == 0);
     }
 
 
