@@ -118,6 +118,21 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         ScoreCard.setFull(dice);
         REQUIRE(ScoreCard.getFull(dice) == 0);
     }
+    SECTION("Scorecard returns valid sum for Small Straight category")
+    {
+        int array[6] = { -1, 1, 2, 3, 4, 6};
+        dice.roll();
+        testCat(dice, array);
+        ScoreCard.setSmall(dice);
+        REQUIRE(ScoreCard.getSmall(dice)==29);
+    }
+    SECTION("Scorecard returns 0 if not Small Straight")
+    {
+        int array[6] = { -1, 1, 1, 6, 4, 5};
+        testCat(dice, array);
+        ScoreCard.setSmall(dice);
+        REQUIRE(ScoreCard.getSmall(dice) == 1);
+    }
 
 
 

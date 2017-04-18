@@ -45,9 +45,9 @@ public:
     int getFOAK(Dice);
     void setFOAK(Dice);
     int getFull(Dice);
-    void setFull(Dice);/*
+    void setFull(Dice);
     int getSmall(Dice);
-    void setSmall(Dice);
+    void setSmall(Dice);/*
     int getLarge(Dice);
     void setLarge(Dice);
     int getYahtzee(Dice);
