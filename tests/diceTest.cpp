@@ -16,5 +16,10 @@ TEST_CASE( "dice class", "[dice]" ) {
 
     SECTION("rolled dice are between 1 and number of sides") {
         d.roll();
+        std::vector<int> vals = d.getValues();
+
+        for(int i = 0; i < vals.size(); i++) {
+            REQUIRE( (vals[i] >= 1 && vals[i] <= 6) );
+        }
     }
 }
