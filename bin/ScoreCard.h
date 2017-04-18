@@ -19,6 +19,7 @@
 using namespace std;
 
 class ScoreCard {
+    
 private:
     string cat[13];
     int scores[13];

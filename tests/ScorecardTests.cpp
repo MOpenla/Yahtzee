@@ -171,5 +171,4 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         ScoreCard.setChance(dice);
         REQUIRE(ScoreCard.getChance(dice)==17);
     }
-
 }
