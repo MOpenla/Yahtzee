@@ -1,5 +1,6 @@
 #include "die.h"
 #include <stdlib.h> //For rand()
+#include <stdexcept> //For invalid_argument
 
 die::die() { 
     val = 0; 
@@ -8,6 +9,11 @@ die::die() {
 
 die::die(int s) {
     val = 0;
+
+    if (s < 2) {
+        throw std::invalid_argument("Die must have at least two sides");
+    }
+
     sides = s;
 }
 
