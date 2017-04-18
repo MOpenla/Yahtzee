@@ -51,3 +51,9 @@ TEST_CASE( "Die class", "[die]" ) {
         REQUIRE( (d.getValue() == val) == (d == val) );
     }
 }
+
+TEST_CASE( "Die class initializers", "[die]" ) {
+    SECTION("die can be initialized with exactly 2 sides") {
+        die d(2);
+    }
+}
