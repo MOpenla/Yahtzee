@@ -30,9 +30,9 @@ public:
     ScoreCard();
     int getAce(Dice);
     void setAce(Dice);
-  /*  int getTwo(Dice);
+    int getTwo(Dice);
     void setTwo(Dice);
-    int getThree(Dice);
+    int getThree(Dice);/*
     void setThree(Dice);
     int getFour(Dice);
     void setFour(Dice);
