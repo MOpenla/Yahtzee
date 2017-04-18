@@ -2,8 +2,11 @@
 #define _DIE_H_
 
 class die {
+
 private:
     int val;
+    int sides;
+
 public:
     die();
     die(int sides);

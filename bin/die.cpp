@@ -3,14 +3,16 @@
 
 die::die() { 
     val = 0; 
+    sides = 6;
 }
 
-die::die(int sides) {
+die::die(int s) {
     val = 0;
+    sides = s;
 }
 
 void die::roll() { 
-    val = rand() % 6 + 1; 
+    val = rand() % sides + 1; 
 }
 
 int die::getValue() { 
