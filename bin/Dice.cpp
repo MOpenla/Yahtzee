@@ -5,6 +5,7 @@
 Dice::Dice() {
     numOfDie = 5;
     sides = 6;
+    init();
 }
 
 Dice::Dice(int numberOfDice) {
@@ -14,7 +15,24 @@ Dice::Dice(int numberOfDice) {
     
     numOfDie = numberOfDice;
     sides = 6;
+    init();
 }
+Dice::Dice(int numberOfDice, int numberOfSides) {
+    if (numberOfDice < 1) {
+        throw invalid_argument("Number of dice cannot be less than one!");
+    }
+    
+    numOfDie = numberOfDice;
+    sides = numberOfSides;
+    init();
+}
+void Dice::init() {
+    for (int i = 0; i < numOfDie; i++) {
+        Die d(sides);
+        dice.push_back(d);
+    }
+}
+
 
 void Dice::roll() {
     for (int i = 0; i < numOfDie; i++) {

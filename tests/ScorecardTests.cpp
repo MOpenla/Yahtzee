@@ -8,7 +8,8 @@
 
 #include "catch.hpp"
 #include "ScoreCard.h"
-
+#include <stdexcept>
+#include <vector>
 
 
 
@@ -28,20 +29,21 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
     ScoreCard ScoreCard;
     Dice dice;
     
-    SECTION( "Scorecard returns valid sum for aces category" )
+    SECTION("Scorecard returns valid sum for aces category" )
     {
         dice.roll();
         ScoreCard.setAce(dice);
         REQUIRE( ScoreCard.getAce(dice)<=5);
         REQUIRE( ScoreCard.getAce(dice)>=0);
     }
-/*
-    SECTION("ScoreCard returns valid sum for TOAK")
+    SECTION ("Scorecard returns valid sum for twos category" )
     {
-        int array[6] = { -1, 1, 1, 1, 4, 5};
         dice.roll();
-        testCat(dice,array);
-        ScoreCard.setTOAK(dice);
-        REQUIRE(ScoreCard.getTOAK(dice)==12);
-    }*/
+        ScoreCard.setTwo(dice);
+        REQUIRE( ScoreCard.getTwo(dice)%2==0);
+        REQUIRE( ScoreCard.getTwo(dice)<=10);
+        REQUIRE( ScoreCard.getTwo(dice)>=0);
+    }
+
+
 }

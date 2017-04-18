@@ -15,9 +15,12 @@ private:
     int numOfDie,
     sides;
     
+    void init();
+    
 public:
     Dice();
     Dice(int numberOfDice);
+    Dice(int numberOfDice, int numberOfSides);
     void roll();
     void reroll(int die);
     vector<int> getValues();

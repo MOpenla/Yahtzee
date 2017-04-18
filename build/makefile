@@ -1,5 +1,5 @@
 CC = g++
-SRC_FILES = ../bin/die.cpp
+SRC_FILES = ../bin/die.cpp ../bin/Dice.cpp ../bin/ScoreCard.cpp 
 
 all: INCLUDE = -I../bin
 all: TARGET = yahtzee
@@ -7,7 +7,7 @@ all: SRC = ../src/main.cpp
 
 tests: INCLUDE = -I../bin -I../tests
 tests: TARGET = tests
-tests: SRC = ../tests/tests.cpp
+tests: SRC = ../tests/tests.cpp ../tests/ScorecardTests.cpp
 
 all:
 	$(CC) $(SRC) $(INCLUDE) $(SRC_FILES) -o $(TARGET)
