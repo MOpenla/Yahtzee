@@ -39,9 +39,9 @@ public:
     int getFive(Dice);
     void setFive(Dice);
     int getSix(Dice);
-    void setSix(Dice);
+    void setSix(Dice);*/
     int getTOAK(Dice);
-    void setTOAK(Dice);
+    void setTOAK(Dice);/*
     int getFOAK(Dice);
     void setFOAK(Dice);
     int getFull(Dice);
@@ -53,9 +53,9 @@ public:
     int getYahtzee(Dice);
     void setYahtzee(Dice);
     int getChance(Dice);
-    void setChance(Dice);
+    void setChance(Dice);*/
     int getTotalScore();
-    void setTotalScore(int num);
+    void setTotalScore(int num);/*
     vector<string> unplayedCategories();
     vector<string> playedCategories();
     int numberOfUnplayedCategories();*/
