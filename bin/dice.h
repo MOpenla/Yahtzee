@@ -8,6 +8,7 @@ private:
 
 public:
     std::vector<int> getValues() { std::vector<int> v (5,0); return v; }
+    void roll() {};
 };
 
 #endif
