@@ -79,7 +79,7 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         dice.roll();
         testCat(dice,array);
         ScoreCard.setTOAK(dice);
-        REQUIRE(ScoreCard.getTOAK(dice)==1);
+        REQUIRE(ScoreCard.getTOAK(dice)==12);
     }
 
 
