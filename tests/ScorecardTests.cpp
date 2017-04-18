@@ -169,7 +169,7 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         int array[6] = { -1, 1, 1, 6, 4, 5};
         testCat(dice, array);
         ScoreCard.setChance(dice);
-        REQUIRE(ScoreCard.getChance(dice)==16);
+        REQUIRE(ScoreCard.getChance(dice)==17);
     }
 
 }
