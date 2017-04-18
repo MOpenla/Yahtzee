@@ -13,7 +13,7 @@ all:
 	$(CC) $(SRC) $(INCLUDE) $(SRC_FILES) -o $(TARGET)
 
 tests:
-	$(CC) $(SRC) $(INCLUDE) $(SRC_FILES) -o $(TARGET)
+	$(CC) $(SRC) $(INCLUDE) $(SRC_FILES) -o $(TARGET) ../tests/gameTests.cpp
 
 clean:
 	rm yahtzee tests -f
