@@ -67,4 +67,8 @@ TEST_CASE( "Die class initializers", "[die]" ) {
             REQUIRE( (d.getValue() == 1 || d.getValue() == 2) );
         }
     }
+
+    SECTION("die can't have less than 2 sides") {
+        REQUIRE_THROWS( die(1) );
+    }
 }
