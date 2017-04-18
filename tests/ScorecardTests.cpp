@@ -44,6 +44,13 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         REQUIRE( ScoreCard.getTwo(dice)<=10);
         REQUIRE( ScoreCard.getTwo(dice)>=0);
     }
-
+    SECTION("Scorecard returns valid sum for threes category" )
+    {
+        dice.roll();
+        ScoreCard.setThree(dice);
+        REQUIRE( ScoreCard.getThree(dice)%3==0);
+        REQUIRE( ScoreCard.getThree(dice)<=15);
+        REQUIRE( ScoreCard.getThree(dice)>=0);
+    }
 
 }
