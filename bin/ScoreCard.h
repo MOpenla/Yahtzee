@@ -35,7 +35,7 @@ public:
     int getThree(Dice);
     void setThree(Dice);
     int getFour(Dice);
-    void setFour(Dice);/*
+    void setFour(Dice);
     int getFive(Dice);
     void setFive(Dice);/*
     int getSix(Dice);
