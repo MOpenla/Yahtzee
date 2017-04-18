@@ -124,14 +124,14 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         dice.roll();
         testCat(dice, array);
         ScoreCard.setSmall(dice);
-        REQUIRE(ScoreCard.getSmall(dice)==29);
+        REQUIRE(ScoreCard.getSmall(dice)==30);
     }
     SECTION("Scorecard returns 0 if not Small Straight")
     {
         int array[6] = { -1, 1, 1, 6, 4, 5};
         testCat(dice, array);
         ScoreCard.setSmall(dice);
-        REQUIRE(ScoreCard.getSmall(dice) == 1);
+        REQUIRE(ScoreCard.getSmall(dice) == 0);
     }
 
 
