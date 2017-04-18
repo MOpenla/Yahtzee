@@ -51,14 +51,14 @@ public:
     int getLarge(Dice);
     void setLarge(Dice);
     int getYahtzee(Dice);
-    void setYahtzee(Dice);/*
+    void setYahtzee(Dice);
     int getChance(Dice);
-    void setChance(Dice);*/
+    void setChance(Dice);
     int getTotalScore();
-    void setTotalScore(int num);/*
+    void setTotalScore(int num);
     vector<string> unplayedCategories();
     vector<string> playedCategories();
-    int numberOfUnplayedCategories();*/
+    int numberOfUnplayedCategories();
 };
 
 #endif

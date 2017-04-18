@@ -154,17 +154,22 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         dice.roll();
         testCat(dice, array);
         ScoreCard.setYahtzee(dice);
-        REQUIRE(ScoreCard.getYahtzee(dice)==49);
+        REQUIRE(ScoreCard.getYahtzee(dice)==50);
     }
     SECTION("Scorecard returns 0 if not Yahtzee")
     {
         int array[6] = { -1, 1, 1, 6, 4, 5};
         testCat(dice, array);
         ScoreCard.setYahtzee(dice);
-        REQUIRE(ScoreCard.getYahtzee(dice) == 1);
+        REQUIRE(ScoreCard.getYahtzee(dice) == 0);
     }
-
-
-
+    SECTION("Scorecard returns valid sum for Chance category")
+    {
+        dice.roll();
+        int array[6] = { -1, 1, 1, 6, 4, 5};
+        testCat(dice, array);
+        ScoreCard.setChance(dice);
+        REQUIRE(ScoreCard.getChance(dice)==16);
+    }
 
 }
