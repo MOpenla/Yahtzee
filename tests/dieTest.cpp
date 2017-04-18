@@ -56,4 +56,15 @@ TEST_CASE( "Die class initializers", "[die]" ) {
     SECTION("die can be initialized with exactly 2 sides") {
         die d(2);
     }
+
+    SECTION("two sided die returns either a 1 or a 2") {
+        die d(2);
+
+        //Roll multiple times to ensure a valid roll isn't rolled the first time
+        for(int i = 0; i < 10; i++) {
+            d.roll();
+
+            REQUIRE( (d.getValue() == 1 || d.getValue() == 2) );
+        }
+    }
 }
