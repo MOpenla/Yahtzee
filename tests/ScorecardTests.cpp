@@ -103,6 +103,21 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         ScoreCard.setFOAK(dice);
         REQUIRE(ScoreCard.getFOAK(dice) == 0);
     }
+    SECTION("Scorecard returns valid sum for Full House category")
+    {
+        int array[6] = { -1, 1, 1, 1, 5, 5};
+        dice.roll();
+        testCat(dice, array);
+        ScoreCard.setFull(dice);
+        REQUIRE(ScoreCard.getFull(dice)==24);
+    }
+    SECTION("Scorecard returns 0 if not Full House")
+    {
+        int array[6] = { -1, 1, 1, 6, 4, 5};
+        testCat(dice, array);
+        ScoreCard.setFull(dice);
+        REQUIRE(ScoreCard.getFull(dice) == 1);
+    }
 
 
 
