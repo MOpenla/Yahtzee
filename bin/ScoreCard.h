@@ -49,9 +49,9 @@ public:
     int getSmall(Dice);
     void setSmall(Dice);
     int getLarge(Dice);
-    void setLarge(Dice);/*
+    void setLarge(Dice);
     int getYahtzee(Dice);
-    void setYahtzee(Dice);
+    void setYahtzee(Dice);/*
     int getChance(Dice);
     void setChance(Dice);*/
     int getTotalScore();
