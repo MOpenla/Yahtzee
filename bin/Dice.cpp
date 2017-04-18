@@ -33,7 +33,6 @@ void Dice::init() {
     }
 }
 
-
 void Dice::roll() {
     for (int i = 0; i < numOfDie; i++) {
         dice[i].roll();

@@ -73,7 +73,14 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         REQUIRE( ScoreCard.getSix(dice)<=36);
         REQUIRE( ScoreCard.getSix(dice)>=0);
     }
-
+    SECTION("Scorecard returns valid sum for TOAK category")
+    {
+        int array[6] = { -1, 1, 1, 1, 4, 5};
+        dice.roll();
+        testCat(dice,array);
+        ScoreCard.setTOAK(dice);
+        REQUIRE(ScoreCard.getTOAK(dice)==1);
+    }
 
 
 }
