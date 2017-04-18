@@ -81,6 +81,29 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         ScoreCard.setTOAK(dice);
         REQUIRE(ScoreCard.getTOAK(dice)==12);
     }
+    SECTION("Scorecard returns 0 if not Three of a Kind")
+    {
+        int array[6] = { -1, 1, 1, 6, 4, 5};
+        testCat(dice, array);
+        ScoreCard.setTOAK(dice);
+        REQUIRE(ScoreCard.getTOAK(dice) == 0);
+    }
+    SECTION("Scorecard returns valid sum for FOAK category")
+    {
+        int array[6] = { -1, 1, 1, 1, 1, 5};
+        dice.roll();
+        testCat(dice, array);
+        ScoreCard.setFOAK(dice);
+        REQUIRE(ScoreCard.getFOAK(dice)==8);
+    }
+    SECTION("Scorecard returns 0 if not Four of a Kind")
+    {
+        int array[6] = { -1, 1, 1, 6, 4, 5};
+        testCat(dice, array);
+        ScoreCard.setFOAK(dice);
+        REQUIRE(ScoreCard.getFOAK(dice) == 1);
+    }
+
 
 
 }

@@ -41,9 +41,9 @@ public:
     int getSix(Dice);
     void setSix(Dice);
     int getTOAK(Dice);
-    void setTOAK(Dice);/*
+    void setTOAK(Dice);
     int getFOAK(Dice);
-    void setFOAK(Dice);
+    void setFOAK(Dice);/*
     int getFull(Dice);
     void setFull(Dice);
     int getSmall(Dice);
