@@ -6,6 +6,7 @@ private:
     int val;
 public:
     die();
+    die(int sides);
 
     void roll();
     int getValue();

@@ -5,6 +5,10 @@ die::die() {
     val = 0; 
 }
 
+die::die(int sides) {
+    val = 0;
+}
+
 void die::roll() { 
     val = rand() % 6 + 1; 
 }
