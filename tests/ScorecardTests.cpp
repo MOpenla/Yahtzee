@@ -33,7 +33,7 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         dice.roll();
         ScoreCard.setAce(dice);
         REQUIRE( ScoreCard.getAce(dice)<=5);
-        //REQUIRE( ScoreCard.getAce(dice)>=0);
+        REQUIRE( ScoreCard.getAce(dice)>=0);
     }
 /*
     SECTION("ScoreCard returns valid sum for TOAK")
