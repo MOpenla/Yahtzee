@@ -13,4 +13,8 @@ TEST_CASE( "dice class", "[dice]" ) {
             REQUIRE(vals[i] == 0);
         }
     }
+
+    SECTION("rolled dice are between 1 and number of sides") {
+        d.roll();
+    }
 }
