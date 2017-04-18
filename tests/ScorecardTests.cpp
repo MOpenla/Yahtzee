@@ -8,9 +8,6 @@
 
 #include "catch.hpp"
 #include "ScoreCard.h"
-#include <stdexcept>
-#include <vector>
-
 
 
 void testCat(Dice &die, int array[])
@@ -67,6 +64,14 @@ TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
         REQUIRE( ScoreCard.getFive(dice)%5==0);
         REQUIRE( ScoreCard.getFive(dice)<=25);
         REQUIRE( ScoreCard.getFive(dice)>=0);
+    }
+    SECTION("Scorecard returns valid sum for sixes category" )
+    {
+        dice.roll();
+        ScoreCard.setSix(dice);
+        REQUIRE( ScoreCard.getSix(dice)%6==0);
+        REQUIRE( ScoreCard.getSix(dice)<=36);
+        REQUIRE( ScoreCard.getSix(dice)>=0);
     }
 
 
