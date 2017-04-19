@@ -16,6 +16,7 @@ class game{
         game();
         void Play();
         bool keepPlaying(int);
+        int validChoice(string);
 };
 
 #endif
