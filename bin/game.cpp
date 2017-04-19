@@ -99,7 +99,7 @@ int game::validChoice(string choice)
 
 bool isUnplayed(string category) {
     vector<string> isUnplayed;
-    isUnplayed.push_back("Fours"); isUnplayed.push_back("Aces"); isUnplayed.push_back("Twos");
+    isUnplayed.push_back("Fours"); isUnplayed.push_back("Ace"); isUnplayed.push_back("Twos");
     bool notPlayed = false;
     
     for(int i = 0; i<isUnplayed.size() && !notPlayed; i++)

@@ -36,7 +36,7 @@ TEST_CASE( "validChoice function of game class", "[game]" ) {
 
 TEST_CASE( "isUnplayed function", "[game]") {
     game game;
-    string category = "Aces";
+    string category = "Ace";
     
     SECTION("Game correctly decides whether category is unplayed or not") {
         REQUIRE(isUnplayed(category));
