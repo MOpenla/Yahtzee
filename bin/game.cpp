@@ -28,7 +28,7 @@ void game::Play(){
     string rrInput;
     int intChoice;
     
-    while(keepPlaying(currentRound)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
+    /*while(keepPlaying(currentRound)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
     {
         cout << "-------------------- Round " << currentRound
         << " --------------------" << endl;
@@ -60,7 +60,7 @@ void game::Play(){
     cout << "**************************************************" << endl << endl;
     
     currentRound++;
-}
+}*/
 
 void Display(int numberOfUnplayedCategories[])
 {
