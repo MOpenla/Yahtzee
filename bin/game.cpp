@@ -28,7 +28,7 @@ void game::Play(){
     string rrInput;
     int intChoice;
     
-    /*while(keepPlaying(currentRound)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
+    while(keepPlaying(currentRound)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
     {
         cout << "-------------------- Round " << currentRound
         << " --------------------" << endl;
@@ -51,16 +51,17 @@ void game::Play(){
         played[intChoice-1] = true;
         
         //setScore(catNum, dice);
+    
+    
+        /*cout << endl;
+        cout << "**************************************************" << endl;
+        cout << "*            Round " << currentRound << " Scored ";
+        cout << scoreArray[intChoice-1] << " points            *" << endl;
+        cout << "**************************************************" << endl << endl;*/
+    
+        currentRound++;
     }
-    
-    cout << endl;
-    cout << "**************************************************" << endl;
-    cout << "*            Round " << currentRound << " Scored ";
-    cout << scoreArray[intChoice-1] << " points            *" << endl;
-    cout << "**************************************************" << endl << endl;
-    
-    currentRound++;
-}*/
+}
 
 void Display(int numberOfUnplayedCategories[])
 {
