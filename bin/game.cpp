@@ -19,7 +19,7 @@ game::game(){
 }
 
 void game::Play(){
-    /*//Dice dice;
+    //Dice dice;
     int currentRound = 1;
     int scoreArray[13];
     bool played[13];
@@ -59,7 +59,7 @@ void game::Play(){
     cout << scoreArray[intChoice-1] << " points            *" << endl;
     cout << "**************************************************" << endl << endl;
     
-    currentRound++;*/
+    currentRound++;
 }
 
 void Display(int numberOfUnplayedCategories[])
@@ -67,12 +67,12 @@ void Display(int numberOfUnplayedCategories[])
 
 }
 
-bool keepPlaying(int numberOfUnplayedCategories)
+bool game::keepPlaying(int numberOfUnplayedCategories)
 {
     return numberOfUnplayedCategories>0;
 }
 
-int validChoice(string choice)
+int game::validChoice(string choice)
 {
     int intDecision = atoi(choice.c_str());
     bool validDecision = false;
