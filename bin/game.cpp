@@ -22,7 +22,7 @@ bool keepPlaying(int numberOfUnplayedCategories)
 
 int validChoice(string choice)
 {
-    int intChoice = atoi(choice);
+    int intChoice = atoi(choice.c_str());
     bool validChoice = false;
     while(!validChoice)
     {
@@ -36,7 +36,7 @@ int validChoice(string choice)
             cout << "Sorry. Not a valid choice. ";
             cout << "Please enter a different category number: ";
             cin >> choice;
-            newChoice = atoi(choice);
+            newChoice = atoi(choice.c_str());
         }
     }
     
