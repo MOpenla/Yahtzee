@@ -8,36 +8,16 @@ using namespace std;
 
 //ScoreCard ScoreCard;
 
+//Function Prototypes
+//void reRollDice(Dice&);
+//void fillScoreArray(int[], Dice);
+//bool isUnplayed(string);
+//void setScore(int, Dice);
+bool keepPlaying(int);
+int validChoice(string);
+
 game::game(){
 
-}
-
-bool keepPlaying(int numberOfUnplayedCategories)
-{
-    return numberOfUnplayedCategories>0;
-}
-
-int validChoice(string choice)
-{
-    int intChoice = atoi(choice.c_str());
-    bool validChoice = false;
-    while(!validChoice)
-    {
-        if(intChoice >=1 && intChoice <=13)
-        {
-            validChoice = true;
-        }
-        
-        if(!validChoice)
-        {
-            cout << "Sorry. Not a valid choice. ";
-            cout << "Please enter a different category number: ";
-            cin >> choice;
-            intChoice = atoi(choice.c_str());
-        }
-    }
-    
-    return intChoice;
 }
 
 void game::Play(){
@@ -87,4 +67,32 @@ void game::Play(){
 void Display(int numberOfUnplayedCategories[])
 {
 
+}
+
+bool keepPlaying(int numberOfUnplayedCategories)
+{
+    return numberOfUnplayedCategories>0;
+}
+
+int validChoice(string choice)
+{
+    int intChoice = atoi(choice.c_str());
+    bool validChoice = false;
+    while(!validChoice)
+    {
+        if(intChoice >=1 && intChoice <=13)
+        {
+            validChoice = true;
+        }
+        
+        if(!validChoice)
+        {
+            cout << "Sorry. Not a valid choice. ";
+            cout << "Please enter a different category number: ";
+            cin >> choice;
+            intChoice = atoi(choice.c_str());
+        }
+    }
+    
+    return intChoice;
 }
