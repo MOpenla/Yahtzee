@@ -12,7 +12,35 @@ game::game(){
 
 }
 
-void Game::Play(){
+bool keepPlaying(int numberOfUnplayedCategories)
+{
+    return numberOfUnplayedCategories>0;
+}
+
+int validChoice(string choice)
+{
+    int intChoice = atoi(choice.c_str());
+    bool validChoice = false;
+    while(!validChoice)
+    {
+        if(intChoice >=1 && intChoice <=13)
+        {
+            validChoice = true;
+        }
+        
+        if(!validChoice)
+        {
+            cout << "Sorry. Not a valid choice. ";
+            cout << "Please enter a different category number: ";
+            cin >> choice;
+            intChoice = atoi(choice.c_str());
+        }
+    }
+    
+    return intChoice;
+}
+
+void game::Play(){
     //Dice dice;
     int currentRound = 1;
     int scoreArray[13];
@@ -22,7 +50,7 @@ void Game::Play(){
     string rrInput;
     int intChoice;
     
-    while(keepPlaying(1)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
+    while(keepPlaying(currentRound)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
     {
         cout << "-------------------- Round " << currentRound
         << " --------------------" << endl;
@@ -47,11 +75,11 @@ void Game::Play(){
         //setScore(catNum, dice);
     }
     
-    cout << endl;
+    /*cout << endl;
     cout << "**************************************************" << endl;
     cout << "*            Round " << currentRound << " Scored ";
-    cout << scoreArray[catNum-1] << " points            *" << endl;
-    cout << "**************************************************" << endl << endl;
+    cout << scoreArray[intChoice-1] << " points            *" << endl;
+    cout << "**************************************************" << endl << endl;*/
     
     currentRound++;
 }
@@ -59,32 +87,4 @@ void Game::Play(){
 void Display(int numberOfUnplayedCategories[])
 {
 
-}
-
-bool keepPlaying(int numberOfUnplayedCategories)
-{
-	return numberOfUnplayedCategories>0;
-}
-
-int validChoice(string choice)
-{
-    int intChoice = atoi(choice.c_str());
-    bool validChoice = false;
-    while(!validChoice)
-    {
-        if(intChoice >=1 && intChoice <=13)
-        {
-            validChoice = true;
-        }
-        
-        if(!validChoice)
-        {
-            cout << "Sorry. Not a valid choice. ";
-            cout << "Please enter a different category number: ";
-            cin >> choice;
-            intChoice = atoi(choice.c_str());
-        }
-    }
-    
-    return intChoice;
 }
