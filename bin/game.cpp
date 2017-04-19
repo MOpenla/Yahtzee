@@ -19,7 +19,7 @@ game::game(){
 }
 
 void game::Play(){
-    //Dice dice;
+    /*//Dice dice;
     int currentRound = 1;
     int scoreArray[13];
     bool played[13];
@@ -53,13 +53,13 @@ void game::Play(){
         //setScore(catNum, dice);
     }
     
-    /*cout << endl;
+    cout << endl;
     cout << "**************************************************" << endl;
     cout << "*            Round " << currentRound << " Scored ";
     cout << scoreArray[intChoice-1] << " points            *" << endl;
-    cout << "**************************************************" << endl << endl;*/
+    cout << "**************************************************" << endl << endl;
     
-    currentRound++;
+    currentRound++;*/
 }
 
 void Display(int numberOfUnplayedCategories[])
