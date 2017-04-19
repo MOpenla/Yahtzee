@@ -13,8 +13,6 @@ using namespace std;
 //void fillScoreArray(int[], Dice);
 //bool isUnplayed(string);
 //void setScore(int, Dice);
-bool keepPlaying(int);
-int validChoice(string);
 
 game::game(){
 
