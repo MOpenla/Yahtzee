@@ -26,7 +26,7 @@ int validChoice(string choice)
     bool validChoice = false;
     while(!validChoice)
     {
-        if(newChoice >=1 && newChoice <=13)
+        if(intChoice >=1 && intChoice <=13)
         {
             validChoice = true;
         }
@@ -36,7 +36,7 @@ int validChoice(string choice)
             cout << "Sorry. Not a valid choice. ";
             cout << "Please enter a different category number: ";
             cin >> choice;
-            newChoice = atoi(choice.c_str());
+            intChoice = atoi(choice.c_str());
         }
     }
     
