@@ -3,6 +3,7 @@
 #include <sstream>
 #include <cctype> //For isDigit()
 #include <stdlib.h>
+#include <vector>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ using namespace std;
 //Function Prototypes
 //void reRollDice(Dice&);
 //void fillScoreArray(int[], Dice);
-//bool isUnplayed(string);
+bool isUnplayed(string);
 //void setScore(int, Dice);
 
 game::game(){
@@ -94,4 +95,19 @@ int game::validChoice(string choice)
     }
     
     return intDecision;
+}
+
+bool isUnplayed(string category) {
+    vector<string> isUnplayed;
+    isUnplayed.push_back("Fours"); isUnplayed.push_back("Aces"); isUnplayed.push_back("Twos");
+    bool notPlayed = false;
+    
+    for(int i = 0; i<isUnplayed.size() && !notPlayed; i++)
+    {
+        if(category == isUnplayed[i])
+        {
+            notPlayed = true;
+        }
+    }
+    return notPlayed;
 }

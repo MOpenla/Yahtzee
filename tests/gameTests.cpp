@@ -3,7 +3,7 @@
 #include "game.cpp"
 #include <string>
 #include <stdexcept>
-#include <vectors>
+#include <vector>
 
 TEST_CASE( "keepPlaying function of game class", "[game]" ) {
     game game;
@@ -42,7 +42,7 @@ TEST_CASE( "isUnplayed function", "[game]") {
         REQUIRE(isUnplayed(category));
     }
     
-    category = "Twos";
+    category = "Fifteens";
     SECTION("Game correctly decides that the category has already been played") {
         REQUIRE(!isUnplayed(category));
     }
