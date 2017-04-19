@@ -1,5 +1,4 @@
 #include "catch.hpp"
-#include "game.cpp"
 #include "game.h"
 #include <string>
 #include <stdexcept>
