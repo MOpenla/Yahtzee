@@ -1,21 +1,22 @@
-#ifndef DIE_H
-#define DIE_H
+#ifndef _DIE_H_
+#define _DIE_H_
 
+class die {
 
-class Die {
 private:
-    int value,
-    sides;
-    
+    int val;
+    int sides;
+
 public:
-    Die();
-    Die(int numberOfSides);
+    die();
+    die(int sides);
+
     void roll();
     int getValue();
-    int operator+(Die& die);
-    int operator+(int val);
-    bool operator==(Die& die);
-    bool operator==(int val);
+    int operator+(die right);
+    int operator+(int right);
+    bool operator==(die right);
+    bool operator==(int right);
 };
 
 #endif

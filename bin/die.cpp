@@ -1,50 +1,49 @@
+#include "die.h"
 #include <stdlib.h> //For rand()
-#include <time.h>
-#include "Die.h"
-#include <stdexcept>
+#include <stdexcept> //For invalid_argument
 
-Die::Die() {
+/******************************************************************************
+ *                                Constructors                                *
+ ******************************************************************************/
+die::die() { 
+    val = 0; 
     sides = 6;
-    value = 0;
-    srand (time(NULL));
 }
 
+die::die(int s) {
+    val = 0;
 
-Die::Die(int numberOfSides) {
-    if (numberOfSides < 2) {
+    if (s < 2) {
         throw std::invalid_argument("Die must have at least two sides");
     }
-    
-    sides = numberOfSides;
-    value = 0;
-    srand (time(NULL));
+
+    sides = s;
 }
 
-
-void Die::roll() {
-    value = rand() % sides + 1;
+/******************************************************************************
+ *                               Public Methods                               *
+ ******************************************************************************/
+void die::roll() { 
+    val = rand() % sides + 1; 
 }
 
-int Die::getValue() {
-    return value;
+int die::getValue() { 
+    return val; 
 }
 
-
-int Die::operator+(Die& die) {
-    return value + die.value;
+int die::operator+(die right) { 
+    return val + right.val; 
 }
 
-
-int Die::operator+(int val) {
-    return value + val;
+int die::operator+(int right) { 
+    return val + right; 
 }
 
-
-bool Die::operator==(Die& die) {
-    return value == die.value;
+bool die::operator==(die right) { 
+    return val == right.val; 
 }
 
-
-bool Die::operator==(int val) {
-    return value == val;
+bool die::operator==(int right) { 
+    return val == right; 
 }
+>>>>>>> master
