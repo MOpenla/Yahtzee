@@ -132,5 +132,10 @@ TEST_CASE( "dice constructors", "[dice]" ) {
 
     SECTION("dice can be initialized with x sided dice") {
         dice d(6, 2);
+        d.roll();
+
+        for (int i = 1; i <= 6; i++) {
+            REQUIRE( (d[i] == 1 || d[i] == 2) );
+        }
     }
 }
