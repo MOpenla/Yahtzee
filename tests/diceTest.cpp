@@ -117,4 +117,16 @@ TEST_CASE( "dice constructors", "[dice]" ) {
             REQUIRE( vals[i] == d.getValue(i+1) );
         }
     }
+
+    SECTION("dice must be initialized with 2 or more dice") {
+        bool caught = false;
+
+        try {
+            dice d(1);
+        } catch (std::invalid_argument e) {
+            caught = true;
+        }
+
+        REQUIRE( caught );
+    }
 }
