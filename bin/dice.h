@@ -12,6 +12,7 @@ private:
 public:
     dice();
     dice(int num);
+    dice(int num, int sides);
 
     void roll();
     void roll(int die);

@@ -21,6 +21,18 @@ dice::dice(int num) {
     }
 }
 
+dice::dice(int num, int sides) {
+    if ( num < 2 ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
+    for (int i = 0; i < num; i++) {
+        die d(sides);
+        dies.push_back(d);
+    }
+}
+
 void dice::roll() { 
     for (int i = 0; i < dies.size(); i++) {
         dies[i].roll();
