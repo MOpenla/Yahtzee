@@ -1,5 +1,5 @@
 # Yahtzee
-Simple command line Yahtzee game.
+Simple command line Yahtzee game.  
 **Authors**: Benjamin Forster, Mitchell Openlander, and Zaren Wienclaw
 
 ## To Compile:
