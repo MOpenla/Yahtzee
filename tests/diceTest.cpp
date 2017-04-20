@@ -79,11 +79,15 @@ TEST_CASE( "dice class exceptions", "[dice]" ) {
         REQUIRE_THROWS( d.roll(9) );
     }
 
-    SECTION("roll(int) -- int must be less than the number of dice") {
+    SECTION("roll(int) -- int must be less than the number of dice (off by one)") {
         REQUIRE_THROWS( d.roll(7) );
     }
 
-    SECTION("roll(int) -- int must be less than the number of dice") {
+    SECTION("roll(int) -- int must be less than the number of dice (valid)") {
         REQUIRE_NOTHROW( d.roll(6) );
+    }
+
+    SECTION("getValue(int) -- int must be positive") {
+        REQUIRE_THROWS( d.getValue(0) );
     }
 }
