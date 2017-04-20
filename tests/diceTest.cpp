@@ -129,4 +129,8 @@ TEST_CASE( "dice constructors", "[dice]" ) {
 
         REQUIRE( caught );
     }
+
+    SECTION("dice can be initialized with x sided dice") {
+        dice d(6, 2);
+    }
 }
