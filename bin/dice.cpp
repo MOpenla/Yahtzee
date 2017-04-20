@@ -9,6 +9,12 @@ dice::dice() {
     }
 }
 
+void dice::roll() { 
+    for(int i = 0; i < dies.size(); i++) {
+        dies[i].roll();
+    }
+}
+
 std::vector<int> dice::getValues() { 
     std::vector<int> temp;
 
@@ -18,8 +24,7 @@ std::vector<int> dice::getValues() {
 
     return temp; 
 }
-void dice::roll() { 
-    for(int i = 0; i < dies.size(); i++) {
-        dies[i].roll();
-    }
+
+int dice::getValue(int die) {
+    return 0;
 }
