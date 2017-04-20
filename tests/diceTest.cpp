@@ -94,4 +94,12 @@ TEST_CASE( "dice class exceptions", "[dice]" ) {
     SECTION("getValue(int) -- int must be less than num of dice") {
         REQUIRE_THROWS( d.getValue(7) );
     }
+
+    SECTION("operator[] -- int must be positive") {
+        REQUIRE_THROWS( d[0] );
+    }
+
+    SECTION("operator[] -- int must be less than num of dice") {
+        REQUIRE_THROWS( d[7] );
+    }
 }
