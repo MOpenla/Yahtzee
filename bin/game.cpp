@@ -22,7 +22,7 @@ void Game::Play(){
     dice dice;
     int currentRound = 1;
     int scoreArray[13];
-    bool played[13];
+    bool played[13]={false};
     string choice;
     //int diceRolls;
     int intChoice;
