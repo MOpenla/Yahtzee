@@ -24,7 +24,7 @@ TEST_CASE( "dice class", "[dice]" ) {
     }
 
     SECTION("getValue returns a 0 before dice are rolled") {
-        REQUIRE( d.getValue(0) == 0 );
+        REQUIRE( d.getValue(1) == 0 );
     }
 
     SECTION("getValue returns the correct value after being rolled") {

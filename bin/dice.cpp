@@ -26,5 +26,5 @@ std::vector<int> dice::getValues() {
 }
 
 int dice::getValue(int die) {
-    return 0;
+    return dies[die-1].getValue();
 }
