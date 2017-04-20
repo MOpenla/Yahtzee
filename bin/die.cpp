@@ -46,4 +46,4 @@ bool die::operator==(die right) {
 bool die::operator==(int right) { 
     return val == right; 
 }
->>>>>>> master
+
