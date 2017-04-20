@@ -49,7 +49,7 @@ ScoreCard::ScoreCard()
 }
 
 
-int sumDiceOfValue(Dice d, int val)
+int sumDiceOfValue(dice d, int val)
 {
     int sum = 0;
     
@@ -62,25 +62,25 @@ int sumDiceOfValue(Dice d, int val)
     return sum;
 }
 
-int ScoreCard::getAce(Dice dice)
+int ScoreCard::getAce(dice dice)
 {
     return sumDiceOfValue(dice, 1);
 }
 
-void ScoreCard::setAce(Dice die)
+void ScoreCard::setAce(dice die)
 {
     scores[0] = this->getAce(die);
     unplayed.remove("Ace");
     played.push_back("Ace");
     this->setTotalScore(scores[0]);
 }
-int ScoreCard::getTwo(Dice dice)
+int ScoreCard::getTwo(dice dice)
 {
     return sumDiceOfValue(dice, 2);
 }
 
 
-void ScoreCard::setTwo(Dice die)
+void ScoreCard::setTwo(dice die)
 {
     scores[1] = this->getTwo(die);
     unplayed.remove("Twos");
@@ -88,12 +88,12 @@ void ScoreCard::setTwo(Dice die)
     this->setTotalScore(scores[1]);
 }
 
-int ScoreCard::getThree(Dice dice)
+int ScoreCard::getThree(dice dice)
 {
     return sumDiceOfValue(dice, 3);
 }
 
-void ScoreCard::setThree(Dice die)
+void ScoreCard::setThree(dice die)
 {
     scores[2] = this->getThree(die);
     unplayed.remove("Threes");
@@ -101,24 +101,24 @@ void ScoreCard::setThree(Dice die)
     this->setTotalScore(scores[2]);
 }
 
-int ScoreCard::getFour(Dice dice)
+int ScoreCard::getFour(dice dice)
 {
     return sumDiceOfValue(dice, 4);
 }
 
-void ScoreCard::setFour(Dice die)
+void ScoreCard::setFour(dice die)
 {
     scores[3] = this->getFour(die);
     unplayed.remove("Fours");
     played.push_back("Fours");
     this->setTotalScore(scores[3]);
 }
-int ScoreCard::getFive(Dice diceFi)
+int ScoreCard::getFive(dice diceFi)
 {
     return sumDiceOfValue(diceFi, 5);
 }
 
-void ScoreCard::setFive(Dice die)
+void ScoreCard::setFive(dice die)
 {
     scores[4] = this->getFive(die);
     unplayed.remove("Fives");
@@ -126,12 +126,12 @@ void ScoreCard::setFive(Dice die)
     this->setTotalScore(scores[4]);
 }
 
-int ScoreCard::getSix(Dice diceS)
+int ScoreCard::getSix(dice diceS)
 {
     return sumDiceOfValue(diceS, 6);
 }
 
-void ScoreCard::setSix(Dice die)
+void ScoreCard::setSix(dice die)
 {
     scores[5] = this->getSix(die);
     unplayed.remove("Sixes");
@@ -139,7 +139,7 @@ void ScoreCard::setSix(Dice die)
     this->setTotalScore(scores[5]);
 }
 
-int ScoreCard::getTOAK(Dice diceTo){
+int ScoreCard::getTOAK(dice diceTo){
     vector<int> values = diceTo.getValues();
     bool isTOAK = false;
     int sum = 0;
@@ -160,7 +160,7 @@ int ScoreCard::getTOAK(Dice diceTo){
     
     return sum;
 }
-void ScoreCard::setTOAK(Dice die)
+void ScoreCard::setTOAK(dice die)
 {
     scores[6] = this->getTOAK(die);
     unplayed.remove("TOAK");
@@ -169,7 +169,7 @@ void ScoreCard::setTOAK(Dice die)
 }
 
 
-int ScoreCard::getFOAK(Dice diceFo){
+int ScoreCard::getFOAK(dice diceFo){
     vector<int> values = diceFo.getValues();
     bool isFOAK = false;
     int sum = 0;
@@ -191,13 +191,13 @@ int ScoreCard::getFOAK(Dice diceFo){
     return sum;
 }
 
-void ScoreCard::setFOAK(Dice die){
+void ScoreCard::setFOAK(dice die){
     scores[7] = this->getFOAK(die);
     unplayed.remove("FOAK");
     played.push_back("FOAK");
     this->setTotalScore(scores[7]);
 }
-int ScoreCard::getFull(Dice dice) {
+int ScoreCard::getFull(dice dice) {
     int sum = 0;
     int valFreq[7] = {-1, 0, 0, 0, 0, 0, 0};
     bool foundStraight = false;
@@ -224,14 +224,14 @@ int ScoreCard::getFull(Dice dice) {
     return sum;
 }
 
-void ScoreCard::setFull(Dice die) {
+void ScoreCard::setFull(dice die) {
     scores[8] = this->getFull(die);
     unplayed.remove("Full");
     played.push_back("Full");
     this->setTotalScore(scores[8]);
     
 }
-int ScoreCard::getSmall(Dice diceSm) {
+int ScoreCard::getSmall(dice diceSm) {
     vector<int> values = diceSm.getValues();
     int startO = 1;
     int startT = 2;
@@ -272,14 +272,14 @@ int ScoreCard::getSmall(Dice diceSm) {
     
 }
 
-void ScoreCard::setSmall(Dice die)
+void ScoreCard::setSmall(dice die)
 {
     scores[9] = this->getSmall(die);
     unplayed.remove("Small");
     played.push_back("Small");
     this->setTotalScore(scores[9]);
 }
-int ScoreCard::getLarge(Dice diceL) {
+int ScoreCard::getLarge(dice diceL) {
     vector<int> values = diceL.getValues();
     int startO = 1;
     int startT = 2;
@@ -311,7 +311,7 @@ int ScoreCard::getLarge(Dice diceL) {
     return sum;
 }
 
-void ScoreCard::setLarge(Dice die)
+void ScoreCard::setLarge(dice die)
 {
     scores[10] = this->getLarge(die);
     unplayed.remove("Large");
@@ -319,7 +319,7 @@ void ScoreCard::setLarge(Dice die)
     this->setTotalScore(scores[10]);
 }
 
-int ScoreCard::getYahtzee(Dice diceY)
+int ScoreCard::getYahtzee(dice diceY)
 {
     int sum = 0;
     if (diceY.getValue(1) == diceY.getValue(2) && diceY.getValue(1) == diceY.getValue(3) && diceY.getValue(1) == diceY.getValue(4) && diceY.getValue(1) == diceY.getValue(5))
@@ -329,18 +329,18 @@ int ScoreCard::getYahtzee(Dice diceY)
     return sum;
 }
 
-void ScoreCard::setYahtzee(Dice die)
+void ScoreCard::setYahtzee(dice die)
 {
     scores[11] = this->getYahtzee(die);
     unplayed.remove("Yahtzee");
     played.push_back("Yahtzee");
     this->setTotalScore(scores[11]);
 }
-int ScoreCard::getChance(Dice diceC) {
+int ScoreCard::getChance(dice diceC) {
     return diceC.sum();
 }
 
-void ScoreCard::setChance(Dice die)
+void ScoreCard::setChance(dice die)
 {
     scores[12] = this->getChance(die);
     unplayed.remove("Chance");
