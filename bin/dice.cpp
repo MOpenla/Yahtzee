@@ -1,6 +1,6 @@
-//#include "die.h"
 #include "dice.h"
-//#include <vector>
+#include <stdexcept> //For invalid_argument
+#include <string>
 
 dice::dice() { 
     for(int i = 0; i < 6; i++) {
@@ -16,6 +16,11 @@ void dice::roll() {
 }
 
 void dice::roll(int die) {
+    if(die < 1) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
     dies[die-1].roll();
 }
 
