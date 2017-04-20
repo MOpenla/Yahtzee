@@ -17,6 +17,7 @@ class Game{
         void Play();
         bool keepPlaying(int);
         int validChoice(string);
+        bool isUnplayed(string);
 };
 
 #endif

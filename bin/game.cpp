@@ -12,7 +12,6 @@ ScoreCard ScoreCard;
 
 //Function Prototypes
 void fillScoreArray(int[], dice);
-bool isUnplayed(string);
 void setScore(int, dice);
 void displayCurrentRoundScore(int, int[], int);
 
@@ -127,7 +126,7 @@ int Game::validChoice(string choice)
 }
 
 //This function determines whether a category has been played
-bool isUnplayed(string category) {
+bool Game::isUnplayed(string category) {
     vector<string> isUnplayed;
     isUnplayed.push_back("Fours"); isUnplayed.push_back("Ace"); isUnplayed.push_back("Twos");
     bool notPlayed = false;
