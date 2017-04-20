@@ -8,7 +8,6 @@ class dice {
 
 private:
     std::vector<die> dies;
-
 public:
     dice();
     dice(int num);
