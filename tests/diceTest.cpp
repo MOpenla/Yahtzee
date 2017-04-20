@@ -23,7 +23,17 @@ TEST_CASE( "dice class", "[dice]" ) {
         }
     }
 
-    SECTION("getValue returns a single die value") {
+    SECTION("getValue returns a 0 before dice are rolled") {
         REQUIRE( d.getValue(0) == 0 );
+    }
+
+    SECTION("getValue returns the correct value after being rolled") {
+        d.roll();
+
+        std::vector<int> vals = d.getValues();
+
+        for(int i = 0; i < vals.size(); i++) {
+            REQUIRE( vals[i] == d.getValue(i+1) );
+        }
     }
 }
