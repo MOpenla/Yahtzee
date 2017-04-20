@@ -1,90 +1,93 @@
+#include "dice.h"
+#include <stdexcept> //For invalid_argument
+#include <string>
 
-#include "Dice.h"
-#include <stdexcept>
-
-Dice::Dice() {
-    numOfDie = 5;
-    sides = 6;
-    init();
-}
-
-Dice::Dice(int numberOfDice) {
-    if (numberOfDice < 1) {
-        throw invalid_argument("Number of dice cannot be less than one!");
-    }
-    
-    numOfDie = numberOfDice;
-    sides = 6;
-    init();
-}
-Dice::Dice(int numberOfDice, int numberOfSides) {
-    if (numberOfDice < 1) {
-        throw invalid_argument("Number of dice cannot be less than one!");
-    }
-    
-    numOfDie = numberOfDice;
-    sides = numberOfSides;
-    init();
-}
-void Dice::init() {
-    for (int i = 0; i < numOfDie; i++) {
-        Die d(sides);
-        dice.push_back(d);
+/******************************************************************************
+ *                                Constructors                                *
+ ******************************************************************************/
+dice::dice() { 
+    for (int i = 0; i < 5; i++) {
+        die d;
+        dies.push_back(d);
     }
 }
 
-void Dice::roll() {
-    for (int i = 0; i < numOfDie; i++) {
-        dice[i].roll();
+dice::dice(int num) {
+    if ( num < 2 ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
+    for (int i = 0; i < num; i++) {
+        die d;
+        dies.push_back(d);
     }
 }
 
-void Dice::reroll(int die) {
-    if (die < 1) {
-        throw out_of_range( "Die must be positive!");
-    } else if (die > numOfDie) {
-        throw out_of_range("Not that many die available!");
+dice::dice(int num, int sides) {
+    if ( num < 2 ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
     }
-    
-    dice[die-1].roll();
+
+    for (int i = 0; i < num; i++) {
+        die d(sides);
+        dies.push_back(d);
+    }
 }
 
-vector<int> Dice::getValues() {
-    vector<int> temp;
-    
-    for (int i = 0; i < numOfDie; i++) {
-        temp.push_back(dice[i].getValue());
+/******************************************************************************
+ *                               Public Methods                               *
+ ******************************************************************************/
+void dice::roll() { 
+    for (int i = 0; i < dies.size(); i++) {
+        dies[i].roll();
     }
-    
-    return temp;
 }
 
-int Dice::getValue(int die) {
-    if (die < 1) {
-        throw out_of_range( "Die must be positive!");
-    } else if (die > numOfDie) {
-        throw out_of_range("Not that many die available!");
+void dice::roll(int die) {
+    if ( die < 1 || die > dies.size() ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
     }
-    
-    return dice[die-1].getValue();
+
+    dies[die-1].roll();
 }
 
-int Dice::sum() {
+std::vector<int> dice::getValues() { 
+    std::vector<int> temp;
+
+    for (int i = 0; i < dies.size(); i++) {
+        temp.push_back( dies[i].getValue() );
+    }
+
+    return temp; 
+}
+
+int dice::getValue(int die) {
+    if ( die < 1 || die > dies.size() ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
+    return dies[die-1].getValue();
+}
+
+int dice::operator[](int die) {
+    if ( die < 1 || die > dies.size() ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
+    return dies[die-1].getValue();
+}
+
+int dice::sum() {
     int sum = 0;
-    
-    for (int i = 0; i < numOfDie; i++) {
-        sum = dice[i] + sum;
+
+    for (int i = 0; i < dies.size(); i++) {
+        sum = dies[i] + sum;
     }
-    
+
     return sum;
 }
-int Dice::operator[](int die) {
-    if (die < 1) {
-        throw out_of_range( "Die must be positive!");
-    } else if (die > numOfDie) {
-        throw out_of_range("Not that many die available!");
-    }
-    
-    return dice[die-1].getValue();
-}
-
