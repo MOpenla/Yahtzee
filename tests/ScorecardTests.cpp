@@ -10,13 +10,13 @@
 #include "ScoreCard.h"
 
 
-void testCat(Dice &die, int array[])
+void testCat(dice &die, int array[])
 {
     for(int k = 1; k<6;k++)
     {
         while(array[k] != die.getValue(k))
         {
-            die.reroll(k);
+            die.roll(k);
         }
     }
 }
@@ -24,7 +24,7 @@ void testCat(Dice &die, int array[])
 TEST_CASE("Scorecard Test Implementation", "[ScoreCard]")
 {
     ScoreCard ScoreCard;
-    Dice dice;
+    dice dice;
     
     SECTION("Scorecard returns valid sum for aces category" )
     {
