@@ -10,6 +10,11 @@ dice::dice() {
 }
 
 dice::dice(int num) {
+    if ( num < 2 ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
     for (int i = 0; i < num; i++) {
         die d;
         dies.push_back(d);
