@@ -44,6 +44,11 @@ int dice::getValue(int die) {
 }
 
 int dice::operator[](int die) {
+    if ( die < 1 || die > dies.size() ) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+    
     return dies[die-1].getValue();
 }
 
