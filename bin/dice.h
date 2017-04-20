@@ -12,8 +12,8 @@ private:
 public:
     dice();
 
-    std::vector<int> getValues();
     void roll();
+    std::vector<int> getValues();
 };
 
 #endif

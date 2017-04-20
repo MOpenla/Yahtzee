@@ -22,4 +22,8 @@ TEST_CASE( "dice class", "[dice]" ) {
             REQUIRE( (vals[i] >= 1 && vals[i] <= 6) );
         }
     }
+
+    SECTION("getValue returns a single die value") {
+        REQUIRE( d.getValue(0) == 0 );
+    }
 }
