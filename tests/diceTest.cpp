@@ -103,3 +103,18 @@ TEST_CASE( "dice class exceptions", "[dice]" ) {
         REQUIRE_THROWS( d[7] );
     }
 }
+
+TEST_CASE( "dice constructors", "[dice]" ) {
+    SECTION("dice can be initialized with any number of dice") {
+        int num = 10;
+
+        dice d(num);
+        d.roll();
+
+        std::vector<int> vals = d.getValues();
+
+        for (int i = 0; i < num; i++) {
+            REQUIRE( vals[i] == d.getValue(i+1) );
+        }
+    }
+}
