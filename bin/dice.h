@@ -11,7 +11,7 @@ using namespace std;
 class Dice
 {
 private:
-    vector<die> dice;
+    vector<Die> dice;
     int numOfDie,
     sides;
     
