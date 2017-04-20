@@ -1,22 +1,24 @@
 #ifndef GAME_H
 #define GAME_H
 
-//#include "Dice.h"
+#include "dice.h"
 #include <vector>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-class game{
+class Game{
     private:
         void Display(int []);
+        void fillScoreArray(int[], dice);
         
     public:
-        game();
+        Game();
         void Play();
         bool keepPlaying(int);
         int validChoice(string);
+        bool isUnplayed(string);
 };
 
 #endif
