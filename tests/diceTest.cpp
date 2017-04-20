@@ -42,7 +42,7 @@ TEST_CASE( "dice class", "[Dice]" ) {
 
         REQUIRE( d.getValue(1) != 0 );
 
-        for(int i = 2; i <= 6; i++) {
+        for(int i = 2; i <= 5; i++) {
             REQUIRE(d.getValue(i) == 0);
         }
     }
@@ -51,7 +51,7 @@ TEST_CASE( "dice class", "[Dice]" ) {
         d.roll();
 
         int sum = 0;
-        for(int i = 1; i <= 6; i++) {
+        for(int i = 1; i <= 5; i++) {
             sum += d.getValue(i);
         }
 
@@ -61,7 +61,7 @@ TEST_CASE( "dice class", "[Dice]" ) {
     SECTION("operator[] is a alais for getValue") {
         d.roll();
 
-        for(int i = 1; i <= 6; i++) {
+        for(int i = 1; i <= 5; i++) {
             REQUIRE(d[i] == d.getValue(i));
         }
     }
@@ -80,11 +80,11 @@ TEST_CASE( "dice class exceptions", "[dice]" ) {
     }
 
     SECTION("roll(int) -- int must be less than the number of dice (off by one)") {
-        REQUIRE_THROWS( d.roll(7) );
+        REQUIRE_THROWS( d.roll(6) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice (valid)") {
-        REQUIRE_NOTHROW( d.roll(6) );
+        REQUIRE_NOTHROW( d.roll(5) );
     }
 
     SECTION("getValue(int) -- int must be positive") {
