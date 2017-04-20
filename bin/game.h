@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-//#include "Dice.h"
+#include "dice.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -11,6 +11,7 @@ using namespace std;
 class Game{
     private:
         void Display(int []);
+        void fillScoreArray(int[], dice);
         
     public:
         Game();

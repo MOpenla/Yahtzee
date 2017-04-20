@@ -11,7 +11,6 @@ using namespace std;
 ScoreCard ScoreCard;
 
 //Function Prototypes
-void fillScoreArray(int[], dice);
 void setScore(int, dice);
 void displayCurrentRoundScore(int, int[], int);
 
@@ -127,13 +126,12 @@ int Game::validChoice(string choice)
 
 //This function determines whether a category has been played
 bool Game::isUnplayed(string category) {
-    vector<string> isUnplayed;
-    isUnplayed.push_back("Fours"); isUnplayed.push_back("Ace"); isUnplayed.push_back("Twos");
+    vector<string> temp = ScoreCard.unplayedCategories();
     bool notPlayed = false;
     
-    for(int i = 0; i<isUnplayed.size() && !notPlayed; i++)
+    for(int i = 0; i<temp.size() && !notPlayed; i++)
     {
-        if(category == isUnplayed[i])
+        if(category == temp[i])
         {
             notPlayed = true;
         }
@@ -142,7 +140,7 @@ bool Game::isUnplayed(string category) {
 }
 
 //This funciton fills the score array with unplayed category scores
-void fillScoreArray(int scoreArray[], dice dice) {
+void Game::fillScoreArray(int scoreArray[], dice dice) {
     if(isUnplayed("Ace"))     {scoreArray[0] = ScoreCard.getAce(dice);}
     if(isUnplayed("Twos"))    {scoreArray[1] = ScoreCard.getTwo(dice);}
     if(isUnplayed("Threes"))  {scoreArray[2] = ScoreCard.getThree(dice);}

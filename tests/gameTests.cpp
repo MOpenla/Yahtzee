@@ -43,12 +43,12 @@ TEST_CASE( "isUnplayed function", "[game]") {
     string category = "Ace";
     
     SECTION("Game correctly decides whether category is unplayed or not") {
-        REQUIRE(isUnplayed(category));
+        REQUIRE(game.isUnplayed(category));
     }
     
     category = "Fifteens";
     SECTION("Game correctly decides that the category has already been played") {
-        REQUIRE(!isUnplayed(category));
+        REQUIRE(!game.isUnplayed(category));
     }
 }
 
