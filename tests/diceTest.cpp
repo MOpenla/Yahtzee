@@ -46,4 +46,15 @@ TEST_CASE( "dice class", "[dice]" ) {
             REQUIRE(d.getValue(i) == 0);
         }
     }
+
+    SECTION("all die can be summed") {
+        d.roll();
+
+        int sum = 0;
+        for(int i = 1; i <= 6; i++) {
+            sum += d.getValue(i);
+        }
+
+        REQUIRE(d.sum() == sum);
+    }
 }
