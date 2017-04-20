@@ -16,6 +16,7 @@ TEST_CASE( "Die class", "[die]" ) {
 
         d.roll();
         d2.roll();
+        d2.roll();
 
         REQUIRE( d.getValue() != d2.getValue() );
     }
