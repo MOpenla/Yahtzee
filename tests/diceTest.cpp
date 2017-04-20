@@ -78,4 +78,12 @@ TEST_CASE( "dice class exceptions", "[dice]" ) {
     SECTION("roll(int) -- int must be less than the number of dice") {
         REQUIRE_THROWS( d.roll(9) );
     }
+
+    SECTION("roll(int) -- int must be less than the number of dice") {
+        REQUIRE_THROWS( d.roll(7) );
+    }
+
+    SECTION("roll(int) -- int must be less than the number of dice") {
+        REQUIRE_NOTHROW( d.roll(6) );
+    }
 }
