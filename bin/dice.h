@@ -1,7 +1,7 @@
 #ifndef _DICE_H_
 #define _DICE_H_
 
-#include "Die.h"
+#include "die.h"
 #include <vector>
 
 class dice {
