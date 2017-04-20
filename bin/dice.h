@@ -3,7 +3,7 @@
 #ifndef DICE_H
 #define DICE_H
 
-#include "die.h"
+#include "Die.h"
 #include <vector>
 
 using namespace std;
@@ -11,7 +11,7 @@ using namespace std;
 class Dice
 {
 private:
-    vector<die> dice;
+    vector<Die> dice;
     int numOfDie,
     sides;
     

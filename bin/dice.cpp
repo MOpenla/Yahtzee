@@ -28,7 +28,7 @@ Dice::Dice(int numberOfDice, int numberOfSides) {
 }
 void Dice::init() {
     for (int i = 0; i < numOfDie; i++) {
-        die d(sides);
+        Die d(sides);
         dice.push_back(d);
     }
 }
