@@ -1,10 +1,10 @@
 #include "catch.hpp"
 #include "game.h"
 #include "game.cpp"
-#include "dice.h"
-#include "dice.cpp"
-#include "scorecard.h"
-#include "scorecard.cpp"
+//#include "dice.h"
+//#include "dice.cpp"
+//#include "scorecard.h"
+//#include "scorecard.cpp"
 #include <string>
 #include <stdexcept>
 #include <vector>

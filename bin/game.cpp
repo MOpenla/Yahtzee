@@ -1,6 +1,6 @@
 #include "game.h"
-#include "scorecard.h"
-#include "dice.h"
+//#include "scorecard.h"
+//#include "dice.h"
 #include <sstream>
 #include <cctype> //For isDigit()
 #include <stdlib.h>
