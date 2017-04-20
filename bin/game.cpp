@@ -1,6 +1,6 @@
-#include "Game.h"
+#include "game.h"
 #include "ScoreCard.h"
-#include "Dice.h"
+#include "dice.h"
 #include <sstream>
 #include <cctype> //For isDigit()
 #include <stdlib.h>
@@ -11,9 +11,9 @@ using namespace std;
 ScoreCard ScoreCard;
 
 //Function Prototypes
-void fillScoreArray(int[], Dice);
+void fillScoreArray(int[], dice);
 bool isUnplayed(string);
-void setScore(int, Dice);
+void setScore(int, dice);
 void displayCurrentRoundScore(int, int[], int);
 
 Game::Game(){
@@ -21,7 +21,7 @@ Game::Game(){
 }
 
 void Game::Play(){
-    Dice dice;
+    dice dice;
     int currentRound = 1;
     int scoreArray[13];
     bool played[13];
@@ -143,7 +143,7 @@ bool isUnplayed(string category) {
 }
 
 //This funciton fills the score array with unplayed category scores
-void fillScoreArray(int scoreArray[], Dice dice) {
+void fillScoreArray(int scoreArray[], dice dice) {
     if(isUnplayed("Ace"))     {scoreArray[0] = ScoreCard.getAce(dice);}
     if(isUnplayed("Twos"))    {scoreArray[1] = ScoreCard.getTwo(dice);}
     if(isUnplayed("Threes"))  {scoreArray[2] = ScoreCard.getThree(dice);}
@@ -160,7 +160,7 @@ void fillScoreArray(int scoreArray[], Dice dice) {
 }
 
 //This function sets the score of the valid category the user selected
-void setScore(int catNum, Dice dice) {
+void setScore(int catNum, dice dice) {
     if(catNum == 1)  {ScoreCard.setAce(dice);}
     if(catNum == 2)  {ScoreCard.setTwo(dice);}
     if(catNum == 3)  {ScoreCard.setThree(dice);}

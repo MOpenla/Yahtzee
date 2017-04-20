@@ -1,6 +1,6 @@
 #include "catch.hpp"
-#include "Game.h"
-#include "Game.cpp"
+#include "game.h"
+//#include "game.cpp"
 //#include "dice.h"
 //#include "dice.cpp"
 //#include "scorecard.h"

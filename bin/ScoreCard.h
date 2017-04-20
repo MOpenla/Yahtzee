@@ -13,7 +13,7 @@
 #include <string>
 #include <stdlib.h>
 #include <list>
-#include "Dice.h"
+#include "dice.h"
 
 
 using namespace std;
@@ -29,32 +29,32 @@ private:
     
 public:
     ScoreCard();
-    int getAce(Dice);
-    void setAce(Dice);
-    int getTwo(Dice);
-    void setTwo(Dice);
-    int getThree(Dice);
-    void setThree(Dice);
-    int getFour(Dice);
-    void setFour(Dice);
-    int getFive(Dice);
-    void setFive(Dice);
-    int getSix(Dice);
-    void setSix(Dice);
-    int getTOAK(Dice);
-    void setTOAK(Dice);
-    int getFOAK(Dice);
-    void setFOAK(Dice);
-    int getFull(Dice);
-    void setFull(Dice);
-    int getSmall(Dice);
-    void setSmall(Dice);
-    int getLarge(Dice);
-    void setLarge(Dice);
-    int getYahtzee(Dice);
-    void setYahtzee(Dice);
-    int getChance(Dice);
-    void setChance(Dice);
+    int getAce(dice);
+    void setAce(dice);
+    int getTwo(dice);
+    void setTwo(dice);
+    int getThree(dice);
+    void setThree(dice);
+    int getFour(dice);
+    void setFour(dice);
+    int getFive(dice);
+    void setFive(dice);
+    int getSix(dice);
+    void setSix(dice);
+    int getTOAK(dice);
+    void setTOAK(dice);
+    int getFOAK(dice);
+    void setFOAK(dice);
+    int getFull(dice);
+    void setFull(dice);
+    int getSmall(dice);
+    void setSmall(dice);
+    int getLarge(dice);
+    void setLarge(dice);
+    int getYahtzee(dice);
+    void setYahtzee(dice);
+    int getChance(dice);
+    void setChance(dice);
     int getTotalScore();
     void setTotalScore(int num);
     vector<string> unplayedCategories();

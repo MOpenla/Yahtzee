@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Game.h"
+#include "game.h"
 
 using namespace std;
 

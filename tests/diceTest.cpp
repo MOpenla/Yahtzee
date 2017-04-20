@@ -4,7 +4,7 @@
 #include <vector>
 
 TEST_CASE( "dice class", "[dice]" ) {
-    Dice d;
+    dice d;
 
     SECTION("the values of unrolled dice are 0") {
         std::vector<int> vals = d.getValues();
@@ -68,7 +68,7 @@ TEST_CASE( "dice class", "[dice]" ) {
 }
 
 TEST_CASE( "dice class exceptions", "[dice]" ) {
-    Dice d;
+    dice d;
     d.roll();
 
     SECTION("roll(int) -- int must be positive") {
@@ -108,7 +108,7 @@ TEST_CASE( "dice constructors", "[dice]" ) {
     SECTION("dice can be initialized with any number of dice") {
         int num = 10;
 
-        Dice d(num);
+        dice d(num);
         d.roll();
 
         std::vector<int> vals = d.getValues();
@@ -122,7 +122,7 @@ TEST_CASE( "dice constructors", "[dice]" ) {
         bool caught = false;
 
         try {
-            Dice d(1);
+            dice d(1);
         } catch (std::invalid_argument e) {
             caught = true;
         }
@@ -131,7 +131,7 @@ TEST_CASE( "dice constructors", "[dice]" ) {
     }
 
     SECTION("dice can be initialized with x sided dice") {
-        Dice d(6, 2);
+        dice d(6, 2);
         d.roll();
 
         for (int i = 1; i <= 6; i++) {
