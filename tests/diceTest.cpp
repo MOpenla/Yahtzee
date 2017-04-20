@@ -38,7 +38,7 @@ TEST_CASE( "dice class", "[Dice]" ) {
     }
 
     SECTION("individual die can be rolled") {
-        d.roll(1);
+        d.reroll(1);
 
         REQUIRE( d.getValue(1) != 0 );
 
@@ -72,19 +72,19 @@ TEST_CASE( "dice class exceptions", "[dice]" ) {
     d.roll();
 
     SECTION("roll(int) -- int must be positive") {
-        REQUIRE_THROWS( d.roll(-1) );
+        REQUIRE_THROWS( d.reroll(-1) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice") {
-        REQUIRE_THROWS( d.roll(9) );
+        REQUIRE_THROWS( d.reroll(9) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice (off by one)") {
-        REQUIRE_THROWS( d.roll(7) );
+        REQUIRE_THROWS( d.reroll(7) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice (valid)") {
-        REQUIRE_NOTHROW( d.roll(6) );
+        REQUIRE_NOTHROW( d.reroll(6) );
     }
 
     SECTION("getValue(int) -- int must be positive") {
