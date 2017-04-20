@@ -1,25 +1,32 @@
-#ifndef _DICE_H_
-#define _DICE_H_
 
-#include "die.h"
+
+#ifndef DICE_H
+#define DICE_H
+
+#include "Die.h"
 #include <vector>
 
-class dice {
+using namespace std;
 
+class Dice
+{
 private:
-    std::vector<die> dies;
-
+    vector<Die> dice;
+    int numOfDie,
+    sides;
+    
+    void init();
+    
 public:
-    dice();
-    dice(int num);
-    dice(int num, int sides);
-
+    Dice();
+    Dice(int numberOfDice);
+    Dice(int numberOfDice, int numberOfSides);
     void roll();
-    void roll(int die);
-    std::vector<int> getValues();
+    void reroll(int die);
+    vector<int> getValues();
     int getValue(int die);
-    int operator[](int die);
     int sum();
+    int operator[](int die);
 };
 
 #endif
