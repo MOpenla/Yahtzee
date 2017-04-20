@@ -1,6 +1,6 @@
 #include "catch.hpp"
-#include "game.h"
-#include "game.cpp"
+#include "Game.h"
+#include "Game.cpp"
 //#include "dice.h"
 //#include "dice.cpp"
 //#include "scorecard.h"
@@ -10,7 +10,7 @@
 #include <vector>
 
 TEST_CASE( "keepPlaying function of game class", "[game]" ) {
-    game game;
+    Game game;
     int numberOfUnplayedCategories = 12;
 
     SECTION("Game keeps playing if number of unplayed categories is greater than 0") {
@@ -23,7 +23,7 @@ TEST_CASE( "keepPlaying function of game class", "[game]" ) {
 }
 
 TEST_CASE( "validChoice function of game class", "[game]" ) {
-    game game;
+    Game game;
     string choice = "1";
     
     SECTION("Game takes in a string and returns a valid choice integer") {
@@ -39,7 +39,7 @@ TEST_CASE( "validChoice function of game class", "[game]" ) {
 }
 
 TEST_CASE( "isUnplayed function", "[game]") {
-    game game;
+    Game game;
     string category = "Ace";
     
     SECTION("Game correctly decides whether category is unplayed or not") {
