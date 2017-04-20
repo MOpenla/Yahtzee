@@ -3,20 +3,20 @@
 #include <string>
 
 dice::dice() { 
-    for(int i = 0; i < 6; i++) {
+    for (int i = 0; i < 6; i++) {
         die d;
         dies.push_back(d);
     }
 }
 
 void dice::roll() { 
-    for(int i = 0; i < dies.size(); i++) {
+    for (int i = 0; i < dies.size(); i++) {
         dies[i].roll();
     }
 }
 
 void dice::roll(int die) {
-    if( die < 1 || die > dies.size() ) {
+    if ( die < 1 || die > dies.size() ) {
         std::string message = "Die must be between 1 and numOfDice (inclusive)";
         throw std::invalid_argument(message);
     }
@@ -27,7 +27,7 @@ void dice::roll(int die) {
 std::vector<int> dice::getValues() { 
     std::vector<int> temp;
 
-    for(int i = 0; i < dies.size(); i++) {
+    for (int i = 0; i < dies.size(); i++) {
         temp.push_back( dies[i].getValue() );
     }
 
@@ -35,6 +35,11 @@ std::vector<int> dice::getValues() {
 }
 
 int dice::getValue(int die) {
+    if (die < 1) {
+        std::string message = "Die must be between 1 and numOfDice (inclusive)";
+        throw std::invalid_argument(message);
+    }
+
     return dies[die-1].getValue();
 }
 
@@ -45,7 +50,7 @@ int dice::operator[](int die) {
 int dice::sum() {
     int sum = 0;
 
-    for(int i = 0; i < dies.size(); i++) {
+    for (int i = 0; i < dies.size(); i++) {
         sum = dies[i] + sum;
     }
 
