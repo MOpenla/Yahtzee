@@ -33,6 +33,10 @@ int dice::getValue(int die) {
     return dies[die-1].getValue();
 }
 
+int dice::operator[](int die) {
+    return dies[die-1].getValue();
+}
+
 int dice::sum() {
     int sum = 0;
 
