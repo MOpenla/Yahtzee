@@ -36,4 +36,14 @@ TEST_CASE( "dice class", "[dice]" ) {
             REQUIRE( vals[i] == d.getValue(i+1) );
         }
     }
+
+    SECTION("individual die can be rolled") {
+        d.roll(1);
+
+        REQUIRE( d.getValue(1) != 0 );
+
+        for(int i = 2; i <= 6; i++) {
+            REQUIRE(d.getValue(i) == 0);
+        }
+    }
 }
