@@ -1,10 +1,10 @@
 #include "catch.hpp"
-#include "Dice.h"
+#include "dice.h"
 #include <stdexcept>
 #include <vector>
 
 TEST_CASE( "dice class", "[Dice]" ) {
-    Dice d;
+    dice d;
 
     SECTION("the values of unrolled dice are 0") {
         std::vector<int> vals = d.getValues();
@@ -38,7 +38,7 @@ TEST_CASE( "dice class", "[Dice]" ) {
     }
 
     SECTION("individual die can be rolled") {
-        d.reroll(1);
+        d.roll(1);
 
         REQUIRE( d.getValue(1) != 0 );
 
@@ -68,23 +68,23 @@ TEST_CASE( "dice class", "[Dice]" ) {
 }
 
 TEST_CASE( "dice class exceptions", "[dice]" ) {
-    Dice d;
+    dice d;
     d.roll();
 
     SECTION("roll(int) -- int must be positive") {
-        REQUIRE_THROWS( d.reroll(-1) );
+        REQUIRE_THROWS( d.roll(-1) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice") {
-        REQUIRE_THROWS( d.reroll(9) );
+        REQUIRE_THROWS( d.roll(9) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice (off by one)") {
-        REQUIRE_THROWS( d.reroll(7) );
+        REQUIRE_THROWS( d.roll(7) );
     }
 
     SECTION("roll(int) -- int must be less than the number of dice (valid)") {
-        REQUIRE_NOTHROW( d.reroll(6) );
+        REQUIRE_NOTHROW( d.roll(6) );
     }
 
     SECTION("getValue(int) -- int must be positive") {
@@ -108,7 +108,7 @@ TEST_CASE( "dice constructors", "[dice]" ) {
     SECTION("dice can be initialized with any number of dice") {
         int num = 10;
 
-        Dice d(num);
+        dice d(num);
         d.roll();
 
         std::vector<int> vals = d.getValues();
@@ -122,7 +122,7 @@ TEST_CASE( "dice constructors", "[dice]" ) {
         bool caught = false;
 
         try {
-            Dice d(1);
+            dice d(1);
         } catch (std::invalid_argument e) {
             caught = true;
         }
@@ -131,7 +131,7 @@ TEST_CASE( "dice constructors", "[dice]" ) {
     }
 
     SECTION("dice can be initialized with x sided dice") {
-        Dice d(6, 2);
+        dice d(6, 2);
         d.roll();
 
         for (int i = 1; i <= 6; i++) {
