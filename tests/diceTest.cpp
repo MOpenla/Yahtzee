@@ -66,3 +66,12 @@ TEST_CASE( "dice class", "[dice]" ) {
         }
     }
 }
+
+TEST_CASE( "dice class exceptions", "[dice]" ) {
+    dice d;
+    d.roll();
+
+    SECTION("roll(int) -- int must be positive") {
+        REQUIRE_THROWS( d.roll(-1) );
+    }
+}
