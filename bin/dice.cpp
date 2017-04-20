@@ -15,6 +15,10 @@ void dice::roll() {
     }
 }
 
+void dice::roll(int die) {
+    dies[die-1].roll();
+}
+
 std::vector<int> dice::getValues() { 
     std::vector<int> temp;
 

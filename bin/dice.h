@@ -13,6 +13,7 @@ public:
     dice();
 
     void roll();
+    void roll(int die);
     std::vector<int> getValues();
     int getValue(int die);
 };
