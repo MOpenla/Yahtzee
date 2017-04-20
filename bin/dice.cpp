@@ -9,6 +9,13 @@ dice::dice() {
     }
 }
 
+dice::dice(int num) {
+    for (int i = 0; i < num; i++) {
+        die d;
+        dies.push_back(d);
+    }
+}
+
 void dice::roll() { 
     for (int i = 0; i < dies.size(); i++) {
         dies[i].roll();
@@ -48,7 +55,7 @@ int dice::operator[](int die) {
         std::string message = "Die must be between 1 and numOfDice (inclusive)";
         throw std::invalid_argument(message);
     }
-    
+
     return dies[die-1].getValue();
 }
 
