@@ -57,4 +57,12 @@ TEST_CASE( "dice class", "[dice]" ) {
 
         REQUIRE(d.sum() == sum);
     }
+
+    SECTION("operator[] is a alais for getValue") {
+        d.roll();
+
+        for(int i = 1; i <= 6; i++) {
+            REQUIRE(d[i] == d.getValue(i));
+        }
+    }
 }
