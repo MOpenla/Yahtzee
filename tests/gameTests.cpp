@@ -1,6 +1,10 @@
 #include "catch.hpp"
 #include "game.h"
 #include "game.cpp"
+#include "dice.h"
+#include "dice.cpp"
+#include "scorecard.h"
+#include "scorecard.cpp"
 #include <string>
 #include <stdexcept>
 #include <vector>
@@ -47,4 +51,18 @@ TEST_CASE( "isUnplayed function", "[game]") {
         REQUIRE(!isUnplayed(category));
     }
 }
+
+/*TEST_CASE( "setScore function of Game class", "[game"){
+    game game;
+    int catNum;
+    dice dice;
+    dice.roll();
+    
+    catNum = 1;
+    
+    SECTION("Game correctly sets score for each category given dice values") {
+        
+    }
+    
+}*/
 

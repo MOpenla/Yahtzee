@@ -1,5 +1,6 @@
 #include "game.h"
-//#include "ScoreCard.h"
+#include "scorecard.h"
+#include "dice.h"
 #include <sstream>
 #include <cctype> //For isDigit()
 #include <stdlib.h>
@@ -7,10 +8,9 @@
 
 using namespace std;
 
-//ScoreCard ScoreCard;
+//scorecard ScoreCard;
 
 //Function Prototypes
-//void reRollDice(Dice&);
 //void fillScoreArray(int[], Dice);
 bool isUnplayed(string);
 //void setScore(int, Dice);
@@ -20,15 +20,13 @@ game::game(){
 }
 
 void game::Play(){
-    //Dice dice;
+    //dice dice;
     int currentRound = 1;
     int scoreArray[13];
     bool played[13];
     string choice;
-    int diceRolls;
-    string rrInput;
+    //int diceRolls;
     int intChoice;
-    bool reroll = true;;
     
     while(keepPlaying(currentRound)) //while(keepPlaying(ScoreCard.numberOfUnplayedCategories()))
     {
@@ -37,42 +35,19 @@ void game::Play(){
         
         cout << endl << "Rolling the dice." << endl;
         //dice.roll();
-        diceRolls = 1;
-        
-        /*while (diceRolls <= 3 && reroll) {
-            //If it's the 3rd roll,
-            // increment diceRolls so we don't have an infinate loop
-            if (diceRolls == 3) {
-                diceRolls++;
-            }
             
-            cout << "Die results: ";
+        /*cout << "Die results: ";
             
-            //Print dice results
-            for (int i = 1; i <= 5; i++) {
-                cout << dice[i] << " ";
-            }
-            cout << endl << endl;
+        //Print dice results
+        for (int i = 1; i <= 5; i++) {
+            cout << dice[i] << " ";
+        }
+        cout << endl << endl;
             
-            fillScoreArray(scoreArray, dice);
-            Display(scoreArray);
+        fillScoreArray(scoreArray, dice);
+        Display(scoreArray);
             
-            cout << endl << endl;
-            
-            //Check if a reroll is valid
-            if (diceRolls < 3) {
-                cout << "Would you like to reroll (y for yes)? ";
-                cin  >> rrInput;
-                
-                if (rrInput == "y") {
-                    reRollDice(dice);
-                    diceRolls++;
-                } else {
-                    reroll = false;
-                }
-            }
-        }*/
-
+        cout << endl << endl;*/
         
         cout << "Which category number would you like to play? ";
         cin >> choice;
@@ -148,24 +123,6 @@ int game::validChoice(string choice)
     return intDecision;
 }
 
-/*void Game::Display(int scoreArray[]){
-    cout << "----- Upper Section -----" << endl;
-    if(isUnplayed("Ace"))     {cout << "(1)  Aces............." << scoreArray[0] << endl;}
-    if(isUnplayed("Twos"))    {cout << "(2)  Twos............." << scoreArray[1] << endl;}
-    if(isUnplayed("Threes"))  {cout << "(3)  Threes..........." << scoreArray[2] << endl;}
-    if(isUnplayed("Fours"))   {cout << "(4)  Fours............" << scoreArray[3] << endl;}
-    if(isUnplayed("Fives"))	  {cout << "(5)  Fives............" << scoreArray[4] << endl;}
-    if(isUnplayed("Sixes"))   {cout << "(6)  Sixes............" << scoreArray[5] << endl;}
-    cout << endl << "----- Lower Section -----" << endl;
-    if(isUnplayed("TOAK"))	  {cout << "(7)  Three of a Kind.." << scoreArray[6] << endl;}
-    if(isUnplayed("FOAK"))	  {cout << "(8)  Four of a Kind..." << scoreArray[7] << endl;}
-    if(isUnplayed("Full")) 	  {cout << "(9)  Full House......." << scoreArray[8] << endl;}
-    if(isUnplayed("Small"))   {cout << "(10) Small Straight..." << scoreArray[9] << endl;}
-    if(isUnplayed("Large"))	  {cout << "(11) Large Straight..." << scoreArray[10] << endl;}
-    if(isUnplayed("Yahtzee")) {cout << "(12) Yahtzee.........." << scoreArray[11] << endl;}
-    if(isUnplayed("Chance"))  {cout << "(13) Chance..........." << scoreArray[12] << endl;}
-}*/
-
 bool isUnplayed(string category) {
     vector<string> isUnplayed;
     isUnplayed.push_back("Fours"); isUnplayed.push_back("Ace"); isUnplayed.push_back("Twos");
@@ -211,36 +168,5 @@ bool isUnplayed(string category) {
     if(catNum == 11) {ScoreCard.setLarge(dice);}
     if(catNum == 12) {ScoreCard.setYahtzee(dice);}
     if(catNum == 13) {ScoreCard.setChance(dice);}
-}*/
-
-/*void reRollDice(Dice& d) {
-    vector<int> diceToReroll;
-    string in = " ";
-    int i;
-    
-    cout << "Enter the die indexes you wish to reroll, seperated by a comma. NO SPACES: ";
-    cin  >> in;
-    
-    stringstream ss(in);
-    
-    while (ss >> i) {
-        if (i >= 1 && i <= 6) {
-            diceToReroll.push_back(i);
-        } else {
-            cout << i << " is not a valid die to reroll. Ignoring it." << endl;
-        }
-        
-        if (ss.peek() == ',') {
-            ss.ignore();
-        }
-    }
-    
-    cout << endl;
-    
-    for (i=0; i< diceToReroll.size(); i++) {
-        cout << "Rerolling die number " << diceToReroll[i] << endl;
-        d.reroll(diceToReroll[i]);
-        cout << "Rolled " << d[diceToReroll[i]] << endl << endl;
-    }
 }*/
 
