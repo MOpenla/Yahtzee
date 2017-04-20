@@ -16,6 +16,7 @@ public:
     void roll(int die);
     std::vector<int> getValues();
     int getValue(int die);
+    int sum();
 };
 
 #endif

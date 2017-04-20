@@ -32,3 +32,13 @@ std::vector<int> dice::getValues() {
 int dice::getValue(int die) {
     return dies[die-1].getValue();
 }
+
+int dice::sum() {
+    int sum = 0;
+
+    for(int i = 0; i < dies.size(); i++) {
+        sum = dies[i] + sum;
+    }
+
+    return sum;
+}
